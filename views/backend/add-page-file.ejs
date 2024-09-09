@@ -1,0 +1,151 @@
+<%-include('common/head.ejs')-%>
+
+<title>Add Page</title>
+
+<style>
+  /* General Styling */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+  }
+
+  .container-fluid {
+    padding: 0 20px;
+  }
+
+  .sidebaare {
+    background-color: #e0f7fa;
+    min-height: 100vh;
+    padding: 20px;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .dashboard-content-area {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    color: #212529;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .form-label {
+    font-size: 1.1rem;
+    color: #495057;
+    font-weight: bold;
+  }
+
+  /* Form Input Styling */
+  .form-control {
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.25);
+  }
+
+  .form-control::placeholder {
+    color: #6c757d;
+    font-style: italic;
+  }
+
+  .editor {
+    resize: none;
+  }
+
+  /* Submit Button */
+  .btn-primary {
+    background-color: #28a745;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #218838;
+    box-shadow: 0px 4px 10px rgba(33, 136, 56, 0.4);
+  }
+
+  /* Form Styling */
+  .mb-3 {
+    margin-bottom: 1.5rem;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+</style>
+
+</head>
+<body>
+
+<%-include('common/header.ejs')-%>
+
+<div class="container-fluid bg-side-nav">
+   <div class="row">
+      <div class="col-lg-2 sidebaare">
+          <%-include('common/sidebar.ejs')-%>
+      </div>
+
+      <div class="col-lg-10">
+        <div class="dashboard-content-area">
+          <h1 class="mb-4">Add New Project</h1>
+          
+          <form method="post" action="/admin/page/add-page/">
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label">ProjectName</label></div>
+              <div class="col"><input type="text" name="page_Url" class="form-control" ></div>
+            </div>
+            
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label">Technology Stack</label></div>
+              <div class="col"><input type="text" name="page_Nav_Text" class="form-control" ></div>
+            </div>
+          
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label">User Experience (UX) Design</label></div>
+              <div class="col"><input type="text" name="page_Title" class="form-control" ></div>
+            </div>
+            
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label">Code Quality and Best Practices</label></div>
+              <div class="col"><input type="text" name="page_Meta_Description" class="form-control" ></div>
+            </div>
+          
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label">Testing and Debugging</label></div>
+              <div class="col"><input type="text" name="page_Meta_Keyword" class="form-control" ></div>
+            </div>
+            
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label">Project Timeline and Milestones</label></div>
+              <div class="col"><input type="text" name="page_Heading" class="form-control" ></div>
+            </div>
+          
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label">Details of Project</label></div>
+              <div class="col"><textarea rows="10" name="Page_Details" class="form-control" ></textarea></div>
+            </div>
+          
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+          
+        </div>
+      </div>
+   </div>
+</div>
+
+<%-include('common/footer.ejs')-%>

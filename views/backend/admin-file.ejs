@@ -1,0 +1,152 @@
+<%-include('common/head.ejs')-%>
+
+<title>Admin Panel</title>
+<style>
+  /* Sidebar Styling */
+  .sidebaare {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding-top: 20px;
+  }
+
+  /* Dashboard Content Area */
+  .dashboard-content-area {
+    padding: 20px;
+    background-color: #fff;
+    min-height: calc(100vh - 70px); /* Ensure it stretches full height */
+  }
+
+  /* Small Box Layout */
+  .small-box {
+    position: relative;
+    display: block;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center; /* Ensure center alignment */
+  }
+
+  /* Text inside the small boxes */
+  .small-box .inner {
+    font-size: 18px;
+  }
+
+  .small-box h3 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .small-box p {
+    font-size: 16px;
+  }
+
+  /* Icon Positioning */
+  .small-box .icon {
+    font-size: 50px;
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    opacity: 0.4;
+  }
+
+  /* Small Box Footer */
+  .small-box-footer {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+    font-weight: bold; /* Make 'More info' bold */
+    text-decoration: none; /* Remove underline */
+  }
+
+  /* Hover Effect on Footer */
+  .small-box-footer:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+    text-decoration: none; /* Ensure no underline on hover */
+  }
+
+  /* Color Schemes for Small Boxes */
+  .small-box.bg-info {
+    background-color: #17a2b8;
+  }
+
+  .small-box.bg-success {
+    background-color: #28a745;
+  }
+
+  .small-box.bg-warning {
+    background-color: #ffc107;
+  }
+</style>
+</head>
+
+<body>
+  <%-include('common/header.ejs')-%>
+
+  <div class="container-fluid bg-side-nav">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-lg-2 sidebaare">
+        <%-include('common/sidebar.ejs')-%>
+      </div>
+
+      <!-- Dashboard Content -->
+      <div class="col-lg-10">
+        <div class="dashboard-content-area">
+          <h1>Dashboard</h1>
+
+          <div class="row">
+            <!-- Navigation Pages Box -->
+            <div class="col-lg-4 col-6">
+              <div class="small-box bg-info">
+                <div class="inner">
+                  
+                  <p>Admin </p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-bag"></i>
+                </div>
+                <a href="/admin/page/" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Category Box -->
+            <div class="col-lg-4 col-6">
+              <div class="small-box bg-success">
+                <div class="inner">
+                  
+                  <p>Manager</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="/admin/manager/" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+
+            
+            <div class="col-lg-4 col-6">
+              <div class="small-box bg-warning">
+                <div class="inner">
+                
+                  <p>Employee</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-add"></i>
+                </div>
+                <a href="/admin/page/" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%-include('common/footer.ejs')-%>
+</body>

@@ -1,0 +1,82 @@
+<header class="navbar navbar-expand-lg navbar-light custom-header">
+  <div class="container-fluid">
+     <a class="navbar-brand text-white ml-4" href="/admin/"><b>Admin Panel</b></a>
+     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <div class="mr-5">
+           <ul class="navbar-nav mr-auto mr-0">
+              <li class="nav-item">
+                 <% if (typeof user !== 'undefined') { %>
+                   <!-- User is logged in, show Logout -->
+                   <form action="/admin/auth/logout" method="POST">
+                     <button type="submit" class="btn btn-link text-white">Logout</button>
+                   </form>
+                 <% } else { %>
+                   <!-- User is not logged in, show Login -->
+                   <a class="nav-link text-white" href="/admin/auth/login">Login</a>
+                 <% } %>
+              </li>
+           </ul>
+        </div>
+     </div>
+  </div>
+</header>
+
+
+
+<style>
+ /* Custom Header Styling */
+ .custom-header {
+   background: linear-gradient(90deg, rgba(45, 52, 54, 1) 0%, rgba(99, 110, 114, 1) 100%);
+   padding: 15px 0;
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .navbar-brand {
+   font-size: 1.8rem;
+   font-weight: bold;
+   color: #ffffff !important;
+   transition: transform 0.3s ease-in-out;
+ }
+
+ .navbar-brand:hover {
+   transform: scale(1.1);
+ }
+
+ .nav-link {
+   font-size: 1.2rem;
+   color: #ffffff !important;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   transition: color 0.3s ease;
+ }
+
+ .nav-link:hover {
+   color: #ffeaa7 !important;
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+ }
+
+ .custom-header .navbar-collapse {
+   justify-content: flex-end;
+ }
+
+ .custom-header .navbar-nav .nav-item {
+   margin-left: 20px;
+ }
+
+ .custom-header .nav-item .nav-link {
+   padding: 10px 20px;
+   border-radius: 5px;
+   background: rgba(255, 255, 255, 0.1);
+   transition: background 0.3s ease, transform 0.3s ease;
+ }
+
+ .custom-header .nav-item .nav-link:hover {
+   background: rgba(255, 255, 255, 0.2);
+   transform: translateY(-2px);
+ }
+
+ .custom-header .container-fluid {
+   display: flex;
+   justify-content: space-between;
+ }
+</style>

@@ -20,6 +20,6 @@ Cannot View Admin Info: Managers do not have access to admin information.
 # Tech Stack
 Backend: Node.js, Express
 Database: MongoDB
-Template Engine: EJS
+Template Engine:EJS
 Session Handling: express-session
-Form Parsing: body-parser
+Form Parsing:body-parser
